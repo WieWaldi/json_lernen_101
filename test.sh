@@ -28,7 +28,7 @@ echo "==============================="
 
 
 # === In ein Array einlesen ====================================================
-typeset -a myarraya
+typeset -A myarraya
 
 while IFS== read -r key value; do
     myarraya[$key]=$value
@@ -50,19 +50,23 @@ echo "==============================="
 
 
 # === In ein Array einlesen ====================================================
-declare -a "myarrayb=($(jq -r '.[] | to_entries | .[] | .key + "=" + .value ' test.json))"
-# declare -a "myarrayb=($(jq -r '.[] | to_entries | .[] | .value' test.json))"
+# declare -A "myarrayb=($(jq -r '.[] | to_entries | .[] | .key + "=" + .value ' test.json))"
+declare -a "myarrayb=($(jq -r '.[] | to_entries | .[] | .value' test.json))"
 
 typeset -p myarrayb
 printf '%s\n' "${myarrayb[@]}"
 echo "==============================="
 
 
-echo "==============================="
-echo "Name    = ${myarrayb[name]}"
-echo "Text    = ${myarrayb[text]}"
-echo "Nummer  = ${myarrayb[nummer]}"
-echo "==============================="
+
+
+
+
+
+
+
+
+
 
 
 exit 0 
