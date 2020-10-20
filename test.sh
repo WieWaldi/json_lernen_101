@@ -57,4 +57,22 @@ echo -e "\n\n==== Rechnen ======================================================
 echo "myarraya Nummer: $(( ( myarraya[Nummer1] + var_tmpa ) / 2 ))"
 echo "myarrayb Nummer: $((myarrayb[5] + var_tmpa))"
 
+# === Noch mehr Rechnen ========================================================
+
+echo -e "\n\n==== Exponentieller Dreck ========================================="
+counter=50
+basis="2"
+output="ergebnis.txt"
+while [[ ${counter} -lt "115" ]]; do
+    funx=${counter}
+    funy=$(echo "${basis}^${funx}" | bc -l)
+
+    echo "x: ${funx}"
+    echo "y: ${funy}"
+    echo -e "${funx}\t${funy}" >> ${output}
+    let counter=counter+5
+done
+
+
+
 exit 0 
