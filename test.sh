@@ -65,7 +65,7 @@ echo "myarrayb Nummer: $((myarrayb[5] + var_tmpa))"
 echo -e "\n\n==== Exponentieller Dreck ========================================="
 tempmax=110
 tempmin=40
-basis="2"
+basis="1.2"
 steep=0.1
 
 # counter=50
